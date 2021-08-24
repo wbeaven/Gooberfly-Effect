@@ -83,8 +83,6 @@ MonoBehaviour:
   magazineSize: 9999999
   bulletsPerTap: 0
   allowButtonHold: 1
-  playerRb: {fileID: 0}
-  recoilForce: 0
   fpsCam: {fileID: 8947309553921462637}
   attackPoint: {fileID: 8947309552700765695}
   muzzleFlash: {fileID: 0}
