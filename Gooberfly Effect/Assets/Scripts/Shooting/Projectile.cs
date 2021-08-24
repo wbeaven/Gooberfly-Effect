@@ -20,6 +20,7 @@ public class Projectile : MonoBehaviour
             //chaosController.GetComponent<Chaos>().chaosLevel += 1;
             //ChaosScript.chaosLevel += 1; //Not sure if the Script part is necessary anymore, that may have been deprecated
             print("ADDING CHAOS");
+            Debug.Log("Counter is " + Chaos.chaosLevel);
         }
     }
 }
