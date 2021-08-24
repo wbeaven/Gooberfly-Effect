@@ -9,9 +9,14 @@ public class Chaos : MonoBehaviour
 
     private void Update()
     {
-        if (chaosLevel >= 10)
+        if (chaosLevel == 10)
         {
             print("LOOKS LIKE CHAOS");
+        }
+
+        if (chaosLevel == 20)
+        {
+            Debug.Log("EVEN MORE CHAOS!!"); //doing a small test here
         }
     }
 }
