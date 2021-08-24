@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6789320623726910834}
   m_Layer: 0
   m_Name: Chaos Orb
-  m_TagString: Untagged
+  m_TagString: Chaos Orb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public GameObject chaosController;
-    //private void OnTriggerEnter (Collider other)
-    //{
-    //    if (other.CompareTag("NotChaos"))
-    //    {            
-    //        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-    //        Chaos.chaosLevel += 1;
-    //        print("ADDING CHAOS");
-    //        Debug.Log("Counter is " + Chaos.chaosLevel);
-    //    }
-    //}
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("NotChaos"))
+        if (collision.gameObject.CompareTag("Building"))
         {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            Chaos.chaosLevel += 1;
-            print("ADDING CHAOS");
-            Debug.Log("Counter is " + Chaos.chaosLevel);
+            collision.gameObject.GetComponent<Building>().buildingHealth -= 1;
+            //Chaos.chaosLevel += 1;
+            //Debug.Log("Counter is " + Chaos.chaosLevel);
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<SphereCollider>());
+            Destroy(GetComponent<Projectile>());
+        }
+        else if (collision.gameObject.CompareTag("Order Drone"))
+        {
+            Destroy(gameObject);
+        }
+        else if (!collision.gameObject.CompareTag("Building") && !collision.gameObject.CompareTag("Order Drone"))
+        {
+            Destroy(gameObject);
         }
     }
 }

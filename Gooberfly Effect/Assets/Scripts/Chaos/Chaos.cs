@@ -8,14 +8,14 @@ public class Chaos : MonoBehaviour
 
     private void Update()
     {
-        if (chaosLevel == 10)
+        if (chaosLevel == 50)
         {
             print("LOOKS LIKE CHAOS");
         }
 
-        if (chaosLevel == 20)
+        if (chaosLevel == 100)
         {
-            Debug.Log("EVEN MORE CHAOS!!"); //doing a small test here
+            print("EVEN MORE CHAOS!!"); //doing a small test here
         }
     }
 }
