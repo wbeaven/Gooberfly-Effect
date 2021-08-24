@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chaos : MonoBehaviour
 {
-    public int chaosLevel = 0;
+    public static int chaosLevel = 0;
     public bool hello;
 
     private void Update()

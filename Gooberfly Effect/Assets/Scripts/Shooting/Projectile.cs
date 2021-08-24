@@ -15,8 +15,9 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("NotChaos"))
         {
+            Chaos.chaosLevel += 1;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            chaosController.GetComponent<Chaos>().chaosLevel += 1;
+            //chaosController.GetComponent<Chaos>().chaosLevel += 1;
             //ChaosScript.chaosLevel += 1;
             print("ADDING CHAOS");
         }
