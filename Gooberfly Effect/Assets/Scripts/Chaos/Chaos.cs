@@ -5,14 +5,14 @@ using UnityEngine;
 public class Chaos : MonoBehaviour
 {
     public static int chaosLevel = 0;
-    public GameObject building; //testing line
+    //public GameObject building; //testing line
 
     private void Update()
     {
         if (chaosLevel == 50)
         {
             print("LOOKS LIKE CHAOS");
-            building.GetComponent<ShatterOnCollision>().enabled = true; //testing line
+            //building.GetComponent<ShatterOnCollision>().enabled = true; //testing line
         }
 
         if (chaosLevel == 100)

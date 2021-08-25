@@ -32834,6 +32834,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5323338144339655333, guid: 1745a89c0cbf8b948b8c172a95cd82b3, type: 3}
+      propertyPath: building
+      value: 
+      objectReference: {fileID: 8656652761738427627, guid: 142e3d99b68aa0d44b3e66dd74074c2e, type: 3}
     - target: {fileID: 5323338144339655334, guid: 1745a89c0cbf8b948b8c172a95cd82b3, type: 3}
       propertyPath: m_Name
       value: Chaos Counter

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ShatterOnCollision : MonoBehaviour
 {
-    public GameObject selfScript;
+    //public GameObject selfScript; //new line
     public GameObject replacement;
     //private GameObject player;
 
-    public void Start()
-    {
-        selfScript.GetComponent<ShatterOnCollision>().enabled = false; //new line for experimenting
-    }
+    //public void Start()
+    //{
+    //    selfScript.GetComponent<ShatterOnCollision>().enabled = false; //new line for experimenting
+    //}
+
     private void OnCollisionEnter(Collision collision)
     {
         GameObject.Instantiate(replacement, transform.position, transform.rotation);
