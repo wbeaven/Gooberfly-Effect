@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public int randomValue;
+    public float randomValue = 3f;
     public float enemySpeed = 5f;
 
     public Transform wallDetect;
@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,9 +24,9 @@ public class EnemyAI : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(enemySpeed, 0, 0);
         if (Physics.CheckSphere(wallDetect.position, enemyRadius, groundLayer))
         {
-            randomValue = Random.Range(0, 1);
+            randomValue = Random.value;
 
-            if (randomValue == 0)
+            if (randomValue < 0.5f)
             {
                 Vector3 to = new Vector3(0, degrees, 0);
 
