@@ -7,6 +7,8 @@ TagManager:
   - Chaos Orb
   - Building
   - Order Drone
+  - NotChaos
+  - Floor
   layers:
   - Default
   - TransparentFX
