@@ -31,7 +31,7 @@ public class Collapse_V2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Ground")
+        if (other.gameObject.name == "Floor")
         {
             explode();
         }

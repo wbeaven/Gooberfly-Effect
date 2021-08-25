@@ -2582,6 +2582,7 @@ GameObject:
   - component: {fileID: 708077469}
   - component: {fileID: 708077468}
   - component: {fileID: 708077467}
+  - component: {fileID: 708077472}
   m_Layer: 0
   m_Name: Building
   m_TagString: NotChaos
@@ -2882,6 +2883,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708077472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708077466}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a9f3a692af70d48b9934ead55564b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfScript: {fileID: 708077466}
+  replacement: {fileID: 8656652761738427627, guid: 142e3d99b68aa0d44b3e66dd74074c2e, type: 3}
 --- !u!1 &709670195
 GameObject:
   m_ObjectHideFlags: 0
@@ -5783,7 +5798,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16324
+  m_Name: pb_Mesh20438
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7065,7 +7080,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16414
+  m_Name: pb_Mesh20566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11346,7 +11361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04749829fcac98441b65d6e736d503ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hello: 1
+  building: {fileID: 0}
 --- !u!1 &4198556473057311842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11416,8 +11431,6 @@ MonoBehaviour:
   magazineSize: 9999999
   bulletsPerTap: 0
   allowButtonHold: 1
-  playerRb: {fileID: 0}
-  recoilForce: 0
   fpsCam: {fileID: 8947309554052758952}
   attackPoint: {fileID: 8947309553100740922}
   muzzleFlash: {fileID: 0}
