@@ -5,10 +5,14 @@ using UnityEngine;
 public class Chaos : MonoBehaviour
 {
     public static int chaosLevel = 0;
+    public static bool startRandom;
+    public bool hasStarted = false;
+
     //public GameObject building; //testing line
 
     private void Update()
     {
+        startRandom = hasStarted;
         if (chaosLevel == 50)
         {
             print("LOOKS LIKE CHAOS");
@@ -17,7 +21,7 @@ public class Chaos : MonoBehaviour
 
         if (chaosLevel == 100)
         {
-            print("EVEN MORE CHAOS!!"); //doing a small test here
+            print("EVEN MORE CHAOS!!");
         }
     }
 }
