@@ -5,23 +5,29 @@ using UnityEngine;
 public class Chaos : MonoBehaviour
 {
     public static int chaosLevel = 0;
-    public static bool startRandom;
     public bool hasStarted = false;
 
-    //public GameObject building; //testing line
+    public AudioSource music1;
+    public AudioSource music2;
+    public AudioSource music3;
+    public AudioSource music4;
 
     private void Update()
     {
-        startRandom = hasStarted;
-        if (chaosLevel == 50)
+        if (chaosLevel >= 215 && chaosLevel < 430)
         {
-            print("LOOKS LIKE CHAOS");
-            //building.GetComponent<ShatterOnCollision>().enabled = true; //testing line
+            music1.Stop();
+            music2.Play();
         }
-
-        if (chaosLevel == 100)
+        if (chaosLevel >= 430 && chaosLevel < 650)
         {
-            print("EVEN MORE CHAOS!!");
+            music2.Stop();
+            music3.Play();
+        }
+        if (chaosLevel >= 650)
+        {
+            music3.Stop();
+            music4.Play();
         }
     }
 }

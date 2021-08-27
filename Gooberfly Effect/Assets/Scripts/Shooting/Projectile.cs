@@ -9,8 +9,6 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Building"))
         {
             collision.gameObject.GetComponent<Building>().buildingHealth -= 1;
-            //Chaos.chaosLevel += 1;
-            //Debug.Log("Counter is " + Chaos.chaosLevel);
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<SphereCollider>());
             Destroy(GetComponent<Projectile>());
