@@ -20,7 +20,6 @@ public class ChaosBar : MonoBehaviour
         {
             currentValue = value;
             slider.value = currentValue;
-            //displayText.text = slider.value.ToString(); //Just in case we want to show the values
         }
     }
 

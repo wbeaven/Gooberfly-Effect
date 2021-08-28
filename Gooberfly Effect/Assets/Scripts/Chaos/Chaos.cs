@@ -13,6 +13,14 @@ public class Chaos : MonoBehaviour
     public static bool buildingEvent1 = false;
     public static bool buildingEvent2 = false;
     public static bool buildingEvent3 = false;
+    public static bool overgrownEvent = false;
+    public static bool eyeEvent = false;
+    public static bool underwaterEvent = false;
+
+    public GameObject overgrown;
+    public GameObject eye;
+    public GameObject underwater;
+    public GameObject dirLight;
 
     private void Update()
     {
@@ -55,17 +63,21 @@ public class Chaos : MonoBehaviour
         {
             buildingEvent3 = true;
         }
-        else if (randomValue > 0.375 && randomValue < 0.5)
+        else if (randomValue > 0.375 && randomValue < 0.5 && overgrownEvent == false)
         {
-
+            overgrown.SetActive(true);
+            overgrownEvent = true;
         }
-        else if (randomValue > 0.5 && randomValue < 0.625)
+        else if (randomValue > 0.5 && randomValue < 0.625 && eyeEvent == false)
         {
-
+            eye.SetActive(true);
+            eyeEvent = true;
         }
-        else if (randomValue > 0.625 && randomValue < 0.75)
+        else if (randomValue > 0.625 && randomValue < 0.75 && underwaterEvent == true)
         {
-
+            underwater.SetActive(true);
+            dirLight.SetActive(false);
+            underwaterEvent = true;
         }
         else if (randomValue > 0.75 && randomValue < 0.875)
         {

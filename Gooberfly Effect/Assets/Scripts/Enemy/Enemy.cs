@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
         if (canBeTurned && turned) //Gives points for shooting it
         {
             Turned();
-            print("Chaos level is now " + Chaos.chaosLevel);
         }
     }
 
