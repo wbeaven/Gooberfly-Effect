@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2529478920084317110}
   - component: {fileID: 2529478920084317105}
   - component: {fileID: 5153233868144804015}
+  - component: {fileID: -3843963843497980470}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Order Drone
@@ -88,7 +89,6 @@ MonoBehaviour:
   detectEast: {fileID: 2529478920660413233}
   detectSouth: {fileID: 2529478921404338079}
   detectWest: {fileID: 2529478920250573941}
-  enemyRadius: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 192
@@ -108,6 +108,26 @@ MonoBehaviour:
   turned: 0
   orderVisual: {fileID: 3384784003109990027}
   chaosVisual: {fileID: 9146875093762118587}
+--- !u!114 &-3843963843497980470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529478920084317104}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89295552fc1ffc340938be78020f7b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToInstantiate:
+  - {fileID: 1554582367531236088, guid: 0d7bc53fbb3f2164c87da035a7947d30, type: 3}
+  minX: -0.5
+  maxX: 0.5
+  minY: -0.5
+  maxY: 0.5
+  minZ: -0.5
+  maxZ: 0.5
 --- !u!1 &2529478920250573940
 GameObject:
   m_ObjectHideFlags: 0

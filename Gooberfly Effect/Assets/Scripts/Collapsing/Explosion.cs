@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    public bool bigBuilding;
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
 
@@ -14,6 +15,9 @@ public class Explosion : MonoBehaviour
     public float explosionRadius = 4f;
     public float explosionUpward = 0.4f;
 
+    public float buildingSizeX, buildingSizeY, buildingSizeZ;
+    public float buildingSizexX, buildingSizeyY, buildingSizezZ;
+
     void Start()
     {
         //Calculate pivot distance
@@ -21,16 +25,13 @@ public class Explosion : MonoBehaviour
 
         //Use this value to create pivot vector
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
+        explode();
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.gameObject.name == "Floor")
-        {
-            explode();
-
-            Debug.Log("Boom, but no boom");
-        }        
+        //explode();
     }
 
     public void explode()
@@ -50,6 +51,19 @@ public class Explosion : MonoBehaviour
             }
         }
 
+        if (bigBuilding)
+        {
+            for (int xX = 0; xX < cubesInRow; xX++)
+            {
+                for (int yY = 0; yY < cubesInRow; yY++)
+                {
+                    for (int zZ = 0; zZ < cubesInRow; zZ++)
+                    {
+                        CreatePiece2(xX, yY, zZ);
+                    }
+                }
+            }
+        }
         //Get explosion position
         Vector3 explosionPos = transform.position;
 
@@ -77,7 +91,21 @@ public class Explosion : MonoBehaviour
         piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
         //Set piece position and scale
-        piece.transform.position = transform.position + new Vector3 (cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot;
+        piece.transform.position = transform.position + new Vector3 (cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot - new Vector3(buildingSizeX, buildingSizeY, buildingSizeZ);
+        piece.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
+
+        //Add Rigidbody and set mass
+        piece.AddComponent<Rigidbody>();
+        piece.GetComponent<Rigidbody>().mass = cubeSize;
+    }
+    void CreatePiece2(int xX, int yY, int zZ)
+    {
+        //Create Piece
+        GameObject piece;
+        piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+        //Set piece position and scale
+        piece.transform.position = transform.position + new Vector3(cubeSize * xX, cubeSize * yY, cubeSize * zZ) - cubesPivot - new Vector3(buildingSizexX, buildingSizeyY, buildingSizezZ);
         piece.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
 
         //Add Rigidbody and set mass

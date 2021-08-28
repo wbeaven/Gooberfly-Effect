@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
         Chaos.chaosLevel += points;
         orderVisual.SetActive(false);
         chaosVisual.SetActive(true);
+        GetComponent<Randomizer_V2>().enabled = true;
         canBeTurned = false;
     }
 }
