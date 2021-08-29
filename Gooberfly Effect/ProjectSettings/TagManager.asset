@@ -9,6 +9,7 @@ TagManager:
   - Order Drone
   - NotChaos
   - Floor
+  - Boss
   layers:
   - Default
   - TransparentFX

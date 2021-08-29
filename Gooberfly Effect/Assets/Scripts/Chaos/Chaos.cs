@@ -17,18 +17,22 @@ public class Chaos : MonoBehaviour
     public static bool eyeEvent = false;
     public static bool underwaterEvent = false;
 
-    public GameObject overgrown;
-    public GameObject eye;
-    public GameObject underwater;
-    public GameObject dirLight;
+    public static bool bossFight = false;
+    public static bool bossDefeated = false;
+
+    public GameObject overgrown, eye, underwater, dirLight, boss, guns;
+
+    public GameObject winUI;
 
     private void Update()
     {
-        Music();
+        //Music();
 
         // A random chaotic event happens every 130 chaos points
         if (chaosLevel >= 130 && eventNum == 0)
         {
+            music1.SetActive(false);
+            music2.SetActive(true);
             ChaosEvent();
             eventNum = 1;
         }
@@ -39,12 +43,30 @@ public class Chaos : MonoBehaviour
         }
         if (chaosLevel >= 390 && eventNum == 2)
         {
+            music2.SetActive(false);
+            music3.SetActive(true);
             ChaosEvent();
             eventNum = 3;
         }
         if (chaosLevel >= 520 && eventNum == 3)
         {
             ChaosEvent();
+            eventNum = 4;
+        }
+        if (chaosLevel >= 650 && eventNum == 4)
+        {
+            music3.SetActive(false);
+            music4.SetActive(true);
+            bossFight = true;
+            eventNum = 5;
+        }
+        if (chaosLevel >= 750 && bossDefeated)
+        {
+            WinState();
+        }
+        if (chaosLevel >= 750 && !bossDefeated)
+        {
+            WinState();
         }
     }
 
@@ -91,22 +113,15 @@ public class Chaos : MonoBehaviour
             ChaosEvent();     // Re-rolls number if a previous event is called
     }
 
-    private void Music()    // Music evolves as the chaos rises
+    public void WinState()
     {
-        if (chaosLevel >= 215 && chaosLevel < 430)
-        {
-            music1.SetActive(false);
-            music2.SetActive(true);
-        }
-        if (chaosLevel >= 430 && chaosLevel < 650)
-        {
-            music2.SetActive(false);
-            music3.SetActive(true);
-        }
-        if (chaosLevel >= 650)
-        {
-            music3.SetActive(false);
-            music4.SetActive(true);
-        }
+        winUI.SetActive(true);
+        StartCoroutine(WaitUI());
+    }
+
+    IEnumerator WaitUI()
+    {
+        yield return new WaitForSeconds(15);
+        winUI.SetActive(false);
     }
 }
