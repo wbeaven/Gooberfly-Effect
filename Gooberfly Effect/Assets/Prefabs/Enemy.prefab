@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2529478920084317110}
   - component: {fileID: 2529478920084317105}
   - component: {fileID: 5153233868144804015}
+  - component: {fileID: 4573381263373041841}
   - component: {fileID: -3843963843497980470}
   m_Layer: 7
   m_Name: Enemy
@@ -108,6 +109,27 @@ MonoBehaviour:
   turned: 0
   orderVisual: {fileID: 3384784003109990027}
   chaosVisual: {fileID: 9146875093762118587}
+--- !u!114 &4573381263373041841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529478920084317104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40887649059814b4396af3e12b6949eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPoint: {fileID: 2529478920084317109}
+  target: {fileID: 0}
+  fireRate: 1
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 256
+  attackRange: 15
+  playerInAttackRange: 0
+  bulletPrefab: {fileID: 2311630372259742740, guid: 9a575e50aeb679d4db160e8fda77a93e, type: 3}
 --- !u!114 &-3843963843497980470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +150,7 @@ MonoBehaviour:
   maxY: 0.5
   minZ: -0.5
   maxZ: 0.5
+  large: 1
 --- !u!1 &2529478920250573940
 GameObject:
   m_ObjectHideFlags: 0

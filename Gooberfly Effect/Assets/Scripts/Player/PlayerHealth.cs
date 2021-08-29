@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChaosBar : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public Slider slider;
+
+    public static int health = 100;
 
     private float currentValue = 0;
     public float CurrentValue
@@ -23,6 +25,6 @@ public class ChaosBar : MonoBehaviour
 
     private void Update()
     {
-        CurrentValue = Chaos.chaosLevel;
+        CurrentValue = health;
     }
 }

@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour
         else if (collision.gameObject.CompareTag("Order Drone"))
         {
             collision.gameObject.GetComponent<Enemy>().turned = true;
+            collision.gameObject.GetComponent<ShootPlayer>().enabled = false;
+
             Destroy(gameObject);
         }
         else if (!collision.gameObject.CompareTag("Building") && !collision.gameObject.CompareTag("Order Drone"))
