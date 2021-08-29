@@ -14,30 +14,25 @@ public class Randomizer_V2 : MonoBehaviour
     {
         int n = Random.Range(0, objectsToInstantiate.Length);
         var position = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z) - new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-        GameObject g = Instantiate(objectsToInstantiate[n], position, Random.rotation);
-        g.transform.parent = transform;
+        GameObject g = Instantiate(objectsToInstantiate[n], position, Random.rotation, transform);
 
         n = Random.Range(0, objectsToInstantiate.Length);
         position = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z) - new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-        g = Instantiate(objectsToInstantiate[n], position, Random.rotation);
-        g.transform.parent = transform;
+        g = Instantiate(objectsToInstantiate[n], position, Random.rotation, transform);
 
         if (large)
         {
             n = Random.Range(0, objectsToInstantiate.Length);
             position = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z) - new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-            g = Instantiate(objectsToInstantiate[n], position, Random.rotation);
-            g.transform.parent = transform;
+            g = Instantiate(objectsToInstantiate[n], position, Random.rotation, transform);
 
             n = Random.Range(0, objectsToInstantiate.Length);
             position = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z) - new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-            g = Instantiate(objectsToInstantiate[n], position, Random.rotation);
-            g.transform.parent = transform;
+            g = Instantiate(objectsToInstantiate[n], position, Random.rotation, transform);
 
             n = Random.Range(0, objectsToInstantiate.Length);
             position = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z) - new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
-            g = Instantiate(objectsToInstantiate[n], position, Random.rotation);
-            g.transform.parent = transform;
+            g = Instantiate(objectsToInstantiate[n], position, Random.rotation, transform);
         }
     }
 }

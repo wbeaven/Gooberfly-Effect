@@ -28,12 +28,6 @@ public class Explosion : MonoBehaviour
         explode();
 
     }
-
-    private void Awake()
-    {
-        //explode();
-    }
-
     public void explode()
     {
         //Make the object disappear
@@ -75,6 +69,7 @@ public class Explosion : MonoBehaviour
         {
             //Get rigidbody from collider object
             Rigidbody rb = hit.GetComponent<Rigidbody>();
+            hit.gameObject.layer = 6;
 
             if (rb != null)
             {
