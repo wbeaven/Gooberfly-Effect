@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7379389283086575853, guid: 2796dedbb142bfa4694040797a6864cb, type: 3}
-  shootForce: 10
+  shootForce: 30
   upwardForce: 0
   timeBetweenShooting: 0.5
   spread: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c8fcf3c185d3a48b1dfe4ba272e0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sensitivity: 350
+  m_sensitivity: 160
   m_clampAngle: 90
   m_playerObject: {fileID: 8947309554027665656}
   m_camera: {fileID: 8947309553921462610}
@@ -203,7 +203,8 @@ GameObject:
   - component: {fileID: 8947309554027665653}
   - component: {fileID: 8947309554027665662}
   - component: {fileID: 8947309554027665657}
-  m_Layer: 0
+  - component: {fileID: 3548343547247174142}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8947309554027665652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.8125, y: 1.9375, z: -5}
+  m_LocalPosition: {x: 0, y: 10.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8947309553921462610}
@@ -319,9 +320,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_charController: {fileID: 8947309554027665662}
-  m_movementSpeed: 12
+  m_movementSpeed: 9
   m_runSpeed: 2
-  m_gravity: -9.81
+  m_gravity: -39.24
   m_jumpHeight: 8.5
   m_groundCheckPoint: {fileID: 8947309552385497342}
   m_groundDistance: 0.4
@@ -334,3 +335,16 @@ MonoBehaviour:
   m_right: 100
   m_sprint: 304
   m_jump: 32
+--- !u!114 &3548343547247174142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947309554027665652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c293d2ae860e414f82df06a30ac6a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}

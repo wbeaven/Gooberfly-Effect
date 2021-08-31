@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Boss : MonoBehaviour
 {
     public NavMeshAgent boss;
-    public GameObject player, cutsceneCam;
+    public GameObject player, cutsceneCam, guns;
     private bool canEvent = true;
 
     public int bossHealth = 100;
@@ -36,6 +36,8 @@ public class Boss : MonoBehaviour
         player.SetActive(true);
         cutsceneCam.SetActive(false);
         GetComponent<Animator>().enabled = false;
+        guns.SetActive(true);
+        boss.enabled = true;
     }
 
     //IEnumerator BossDefeat()

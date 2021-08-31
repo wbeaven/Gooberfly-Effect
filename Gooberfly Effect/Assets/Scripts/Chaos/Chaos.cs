@@ -20,14 +20,18 @@ public class Chaos : MonoBehaviour
     public static bool bossFight = false;
     public static bool bossDefeated = false;
 
-    public GameObject overgrown, eye, underwater, dirLight, boss, guns;
+    public static bool tutDone = false;
+
+    public GameObject overgrown, eye, underwater, dirLight;
 
     public GameObject winUI;
 
     private void Update()
     {
-        //Music();
-
+        if (MenuManager.tutorial2 && chaosLevel == 70)
+        {
+            tutDone = true;
+        }
         // A random chaotic event happens every 130 chaos points
         if (chaosLevel >= 130 && eventNum == 0)
         {
